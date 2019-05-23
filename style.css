@@ -1,0 +1,45 @@
+body{
+    color: rgb(252, 252, 252);
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+#content{
+    display: grid;
+    max-width: 960px;
+    margin: 0 auto; 
+}
+
+#content div{
+    background: #3bbced;
+}
+
+#content div:nth-child(even){
+    background: #777;
+}
+
+
+/*
+stage 1:
+display: grid;
+instead of the block display.
+
+stage 2:
+grid-template-columns:33.3% 33.3% 33.3%,
+if more then 100%, will cause problems, then better fr.
+repeat(3, 1fr) con: cant modify fr. can combine:
+*grid-template-columns: repeat(3, 1fr) 3fr;
+*things happaning automaticly on the rows.
+
+stage 3:
+
+stage 4:
+stage 5:
+stage 6:
+stage 7:
+stage 8:
+
+
+
+
+
