@@ -7,7 +7,9 @@ body{
 #content{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    max-width: 960px;
+    grid-auto-rows:minmax(200px, auto);
+    grid-gap: 10px;
+    max-width: 500px;
     margin: 0 auto; 
 }
 
@@ -18,6 +20,23 @@ body{
 #content div:nth-child(even){
     background: #777;
 }
+.one{
+    grid-column: 1/3;
+}
+
+.three{
+    grid-column: 1/3;
+    grid-row: 2/4;
+}
+
+.six{
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+.five {
+    grid-column: 1/4;
+    grid-row: 4/5;
+}
 
 
 /*
@@ -26,9 +45,9 @@ instead of the block display grid.
 grid-template-columns:33.3% 33.3% 33.3%;
 if more then 100% (demo), will cause problems, then better fr.
 repeat(3, 1fr); con: cant modify fr. can combine:
-*grid-template-columns: repeat(3, 1fr) 3fr;
+grid-template-columns: repeat(3, 1fr) 3fr;
 *things happaning automaticly on the rows.
-
+end : grid-template-columns: repeat(3, 1fr);
 stage 2:
 grid-auto-rows:30px; general to all rows,
 will overide the text, solution:
@@ -36,16 +55,39 @@ grid-auto-rows:minmax(30px, auto);
 grid-template-rows: 10px;
 grid-template-rows: repeat(3,10px);
 grid-template-rows: repeat(100,minmax(30px,auto)); ctrl+shift+c
-
+end: grid-auto-rows:minmax(200px, auto);
 
 stage 3:
 grid-column-gap:10px;
 grid-row-gap:10px;
 grid-gap: 10px;
+*not like margin-only  gap between elements!
 
 stage 4:
+.one{
+    grid-column-start:1;
+    grid-column-end:3;
+}
+use instead: grid-column: 1/3;
+
+.three{
+    grid-column: 1/3;
+    grid-row: 2/4;
+}
+
+.six{
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+overides three.
+.six{
+    grid-column: 3/4;
+    grid-row: 3/4;
+} 
+replaces five. 
 
 stage 5:
+
 
 stage 6:
 
