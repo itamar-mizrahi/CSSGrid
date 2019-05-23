@@ -4,7 +4,7 @@ body{
     text-align: center;
 }
 
-#content{
+.content{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows:minmax(200px, auto);
@@ -13,30 +13,65 @@ body{
     margin: 0 auto; 
 }
 
-#content div{
+.content div{
     background: #3bbced;
 }
 
-#content div:nth-child(even){
+.content div:nth-child(even){
     background: #777;
 }
 .one{
     grid-column: 1/3;
+    align-self:center;
+    justify-self:center;
 }
 
 .three{
     grid-column: 1/3;
     grid-row: 2/4;
+
 }
 
 .six{
     grid-column: 3/4;
     grid-row: 3/4;
+    align-self:end;
+    justify-self:end;
+    padding:50px;
 }
+
 .five {
     grid-column: 1/4;
     grid-row: 4/5;
 }
+
+#nested{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    background-color: rgb(233, 154, 8);
+    padding:10px;
+}
+.content div.two{
+    background-color: rgb(233, 154, 8);
+    align-self:start;
+    justify-self:start;
+}
+
+#nested div{
+    padding:30px;
+}  
+
+.ten{
+    grid-column: span 3; 
+}
+.four{
+    align-self:start;
+    justify-self:start;
+    padding:50px;
+}
+
+
 
 
 /*
@@ -88,8 +123,37 @@ replaces five.
 
 stage 5:
 
+#nested{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    background-color: rgb(233, 154, 8);
+    padding:50px;
+}
+.content div.two{
+    background-color: rgb(233, 154, 8);
+}
+need to be specifiec to overide background, 
+because of the sum rule.
+
+#nested div{
+    padding:10px;
+}  
+
+#nested div{
+    padding:30px;
+}  
+.ten{
+    grid-column: span 3; 
+} 
+by default 1,and spannig 3.
 
 stage 6:
+align-items:start;
+justify-items:start;
+align-self:start;
+justify-self:start;
+
 
 stage 7:
 
